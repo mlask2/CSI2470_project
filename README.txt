@@ -1,60 +1,40 @@
-# CSI2470_project
-    Simple Client-Server Application
- **** Overview: 
-This project demonstrates a basic Client-Server application using Java's TCP socket programming. The server accepts multiple client connections and echoes messages in uppercase.
+README: How to run: Client-Server Text Application for Visual Studio Code
 
- **** How to Compile and Run:
+Project Overview:
+This project demonstrates a basic Client-Server application in Python using TCP socket programming. The server listens for multiple client connections, and clients send messages to that server.
 
-		1. Requirements
-Java Development Kit (JDK) installed (JDK 8 or higher recommended).
-Any text editor or IDE (e.g., VS Code, IntelliJ, or Eclipse).
-Terminal/Command Prompt for execution.
+How to Compile and Run in Visual Studio Code (VS Code) on Windows:
+1. Prerequisites
+	STEP ONE:
+Python installed (version 3.6 or later). Link: https://www.python.org/downloads/ 
+	STEP TWO:
+Download Visual Studio Code. Link: https://code.visualstudio.com/
+	STEP THREE:
+Install the Python Extension in VS Code:
+Open VS Code, go to Extensions (Ctrl+Shift+X), and search for Python.
+Install it.
 
-	****	2. Instructions
-	Step 1: Compile the Code
-Save the Server and Client code in separate .java files:
-Server.java
-Client.java
-Open a terminal or command prompt.
-Navigate to the directory where the files are saved.
-Compile the code using the following commands:
-bash
-Copy code
-javac Server.java
-javac Client.java
+2. Setting Up the Files
+	STEP ONE:
+Open VS Code.
+	STEP TWO
+Make sure the Server.py and Client.py are downloaded
+	STEP THREE:
+Open the Server.py and Client.py in two individual windows by clicking the files. (Should open in VS code)
 
-		Step 2: Run the Server
-Start the server by running:
-bash
-Copy code
-java Server
-The server will begin listening for client connections on port 1234.
+3. Running the Application
+	STEP ONE:
+Run the server and the client
+Use Ctrl+Shift+D OR click "Run and Debug" on the left hand sidebar. View the code in the terminal below. (Bottom of screen)
 
-		Step 3: Run the Client
-Open another terminal or command prompt.
-Start the client by running:
-bash
-Copy code
-java Client
-The client will connect to the server on localhost (default) at port 1234.
+4. Using the Application
+Type a message in the client terminal and press Enter.
+The server will process the message and echo it back
+Repeat the process to test additional messages.
+ * Can have multiple client connections at once
+To test multiple clients:
+Open additional terminals in VS Code and run python client.py in each.
 
 
-	*****	3. Testing the Application
-Once the client connects to the server, type a message in the client's terminal and press Enter.
-The server will process the message and send it back in uppercase.
-The client will display the server's response.
 
-	*****	4. Notes
-Ensure the server is running before starting the client.
-For multiple clients, open separate terminals and run the client program in each.
-To change the server port or address:
-Update the port variable in both Server.java and Client.java.
-Change the serverAddress variable in Client.java to the desired IP address.
 
-	*****	Common Issues
-Port Already in Use:
-Make sure no other application is using port 1234.
-Change the port in the code if needed.
-Connection Refused:
-Ensure the server is running before starting the client.
-Check for firewall restrictions if running on different machines.

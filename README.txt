@@ -1,8 +1,5 @@
 README: How to run: Client-Server Text Application for Visual Studio Code
 
-Project Overview:
-This project demonstrates a basic Client-Server application in Python using TCP socket programming. The server listens for multiple client connections, and clients send messages to that server.
-
 How to Compile and Run in Visual Studio Code (VS Code) on Windows:
 1. Prerequisites
 	STEP ONE:

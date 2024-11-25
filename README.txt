@@ -34,7 +34,3 @@ Repeat the process to test additional messages.
  * Can have multiple client connections at once
 To test multiple clients:
 Open additional terminals in VS Code and run python client.py in each.
-
-
-
-

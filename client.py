@@ -3,32 +3,44 @@ import threading
 
 nickname = input("Pick a nickname: ")
 
-# Defining a socket and connecting it to the server
-client= socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-client.comment(('127.0.0.1', 55555))
+# connect to the server
+client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+client.connect(('127.0.0.1', 55555))
 
-# Defining the recieve function
-def recieve():
+# send password
+password = input("Enter server password: ")
+client.send(password.encode('ascii'))
+
+# check for server response password
+response = client.recv(1024).decode('ascii')
+if response == 'Incorrect password. Disconnecting.':
+    print(response)
+    client.close()
+    exit()
+
+# receive 
+def receive():
     while True:
         try:
-            message = client.recv(1024).decode('ascii') # Recieving messages from the server
-            if message == 'NICK' :
-                client.send(nickname.endcode('ascii'))
+            message = client.recv(1024).decode('ascii')
+            if message == 'NICK':
+                client.send(nickname.encode('ascii'))
             else:
                 print(message)
-        except:  
-            print("An error has occurred")
+        except Exception as e:
+            print(f"An error has occurred: {e}")
             client.close()
             break
 
-# Defining the write function
+# write
 def write():
     while True:
         message = f'{nickname}: {input("")}'
         client.send(message.encode('ascii'))
 
-recieve_thread = threading.Thread(target=recieve)
-recieve_thread.start()
+# Start threads for receiving and writing
+receive_thread = threading.Thread(target=receive)
+receive_thread.start()
 
 write_thread = threading.Thread(target=write)
 write_thread.start()

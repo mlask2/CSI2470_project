@@ -25,6 +25,8 @@ Run the server and the client
 Use Ctrl+Shift+D OR click "Run and Debug" on the left hand sidebar. View the code in the terminal below. (Bottom of screen)
 
 4. Using the Application
+Server will ask the client for a NICKNAME. Enter the name you wish in the terminal
+Server will ask for the password. The password is "password"
 Type a message in the client terminal and press Enter.
 The server will process the message and echo it back
 Repeat the process to test additional messages.
